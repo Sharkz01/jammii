@@ -1,0 +1,72 @@
+body{
+  font-size: large;
+}
+
+strong{
+  font-weight: bolder;
+}
+
+.nav{
+  margin-bottom: 150px !important;
+}
+
+.para{
+  line-height:1.75em;
+  border-top: 3px solid;
+  border-image: linear-gradient(to right, #3ad554 0%, #066e06 100%);
+  border-image-slice: 1;
+  border-width: 5px;
+  margin:0;
+  padding:40px;
+  counter-increment: section;
+  position:relative;
+  color: black;
+
+  &:before{
+    margin-right: 10px;
+    content: counter(section);
+    position: absolute;
+    border-radius: 50%;
+    padding: 10px;
+    height: 1.35em;
+    width: 1.30em;
+    background-color:#3ad554;
+    text-align: center;
+    line-height: 0.2em;
+    color: white;
+  }
+}
+
+.para:nth-child(odd){
+  border-right: 3px solid;
+  padding-left: 0;
+  &:before{
+    left: 100%;
+    margin-left: -30px;
+    padding-right: 18px;
+  }
+}
+
+.para:nth-child(even){
+  border-left: 3px solid;
+  padding-right: 0;
+
+  &:before{
+    right: 100%;
+    margin-right: -30px;
+    padding-right: 18px;
+  }
+}
+
+.para:first-child{
+  border-top:0;
+  border-top-right-radius:0;
+  border-top-left-radius:0;
+}
+.para:last-child{
+  border-bottom-right-radius:0;
+  border-bottom-left-radius: 0;
+}
+
+
+@import "../materialize-src/sass/materialize";
